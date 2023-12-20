@@ -1,0 +1,19 @@
+enable
+conf t
+hostname #
+enable secret #
+line console 0
+password #
+login
+exit
+line vty 0 15
+password #
+login
+exit
+interface vlan 1
+ip address # #
+no shutdown
+exit
+banner motd #
+end
+copy running-config starup-config

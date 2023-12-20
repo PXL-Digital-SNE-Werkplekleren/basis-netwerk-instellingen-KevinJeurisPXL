@@ -1,0 +1,23 @@
+enable
+conf t
+hostname #
+enable secret #
+line console 0
+password #
+login
+exit
+line vty 0 15
+password #
+login
+exit
+interface gigabitethernet0/0
+ip address # #
+no shutdown
+exit
+interface gigabitethernet0/1
+ip address # #
+no shutdown
+exit
+ip route # # #
+end
+copy running-config starup-config
